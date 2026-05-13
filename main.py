@@ -26,25 +26,25 @@ class MyApp(App):
         return layout
 
     def show_popup(self, button_num):
-        content = BoxLayout(orientation='vertical', spacing=10, padding=10)
+        if button_num==0:
+            content = BoxLayout(orientation='vertical', spacing=10, padding=10)
 
-        # ✅ 弹窗内的按钮也要指定字体
-        close_btn = Button(text='返回', size_hint_y=None, height=50, font_name=font_name)
-        action_btn = Button(text='认识生物', size_hint_y=None, height=50, font_name=font_name)
+            close_btn = Button(text='返回', size_hint_y=None, height=50, font_name=font_name)
+            action_btn = Button(text='认识生物', size_hint_y=None, height=50, font_name=font_name)
 
-        content.add_widget(action_btn)
-        content.add_widget(close_btn)
+            content.add_widget(action_btn)
+            content.add_widget(close_btn)
 
-        popup = Popup(title=sector[button_num], content=content, size_hint=(0.7, 0.4))
-        popup.title_font = font_name
+            popup = Popup(title=sector[button_num], content=content, size_hint=(0.7, 0.4))
+            popup.title_font = font_name
 
-        close_btn.bind(on_press=popup.dismiss)
-        action_btn.bind(on_press=lambda x: self.btn_action(popup, button_num))
+            close_btn.bind(on_press=popup.dismiss)
+            action_btn.bind(on_press=lambda x: self.btn_action(popup, button_num))
 
-        popup.open()
-
+            popup.open()
+        else:
+            pass
     def btn_action(self, popup, button_num):
-        print(f"点击了: {sector[button_num]}")
         popup.dismiss()
 
 if __name__ == "__main__":
