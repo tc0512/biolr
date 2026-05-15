@@ -28,22 +28,70 @@ class MyApp(App):
     def show_popup(self, button_num):
         if button_num==0:
             content = BoxLayout(orientation='vertical', spacing=10, padding=10)
-
             close_btn = Button(text='返回', size_hint_y=None, height=50, font_name=font_name)
             action_btn = Button(text='认识生物', size_hint_y=None, height=50, font_name=font_name)
-
             content.add_widget(action_btn)
             content.add_widget(close_btn)
-
             popup = Popup(title=sector[button_num], content=content, size_hint=(0.7, 0.4))
             popup.title_font = font_name
-
             close_btn.bind(on_press=popup.dismiss)
             action_btn.bind(on_press=lambda x: self.btn_action(popup, button_num))
-
             popup.open()
-        else:
-            pass
+        elif button_num==1:
+            content = BoxLayout(orientation='vertical', spacing=10, padding=10)
+            close_btn = Button(text='返回', size_hint_y=None, height=50, font_name=font_name)
+            action_btn = Button(text='藻类与植物的类群', size_hint_y=None, height=50, font_name=font_name)
+            content.add_widget(action_btn)
+            content.add_widget(close_btn)
+            popup = Popup(title=sector[button_num], content=content, size_hint=(0.7, 0.4))
+            popup.title_font = font_name
+            close_btn.bind(on_press=popup.dismiss)
+            action_btn.bind(on_press=lambda x: self.btn_action(popup, button_num))
+            popup.open()
+        elif button_num==2:
+            content = BoxLayout(orientation='vertical', spacing=10, padding=10)
+            close_btn = Button(text='返回', size_hint_y=None, height=50, font_name=font_name)
+            action_btn = Button(text='被子植物的一生', size_hint_y=None, height=50, font_name=font_name)
+            content.add_widget(action_btn)
+            content.add_widget(close_btn)
+            popup = Popup(title=sector[button_num], content=content, size_hint=(0.7, 0.4))
+            popup.title_font = font_name
+            close_btn.bind(on_press=popup.dismiss)
+            action_btn.bind(on_press=lambda x: self.btn_action(popup, button_num))
+            popup.open()
+        elif button_num==3:
+            content = BoxLayout(orientation='vertical', spacing=10, padding=10)
+            close_btn = Button(text='返回', size_hint_y=None, height=50, font_name=font_name)
+            action_btn = Button(text='人的生殖和发育', size_hint_y=None, height=50, font_name=font_name)
+            content.add_widget(action_btn)
+            content.add_widget(close_btn)
+            popup = Popup(title=sector[button_num], content=content, size_hint=(0.7, 0.4))
+            popup.title_font = font_name
+            close_btn.bind(on_press=popup.dismiss)
+            action_btn.bind(on_press=lambda x: self.btn_action(popup, button_num))
+            popup.open()
+        elif button_num==4:
+            content = BoxLayout(orientation='vertical', spacing=10, padding=10)
+            close_btn = Button(text='返回', size_hint_y=None, height=50, font_name=font_name)
+            action_btn = Button(text='生态系统', size_hint_y=None, height=50, font_name=font_name)
+            content.add_widget(action_btn)
+            content.add_widget(close_btn)
+            popup = Popup(title=sector[button_num], content=content, size_hint=(0.7, 0.4))
+            popup.title_font = font_name
+            close_btn.bind(on_press=popup.dismiss)
+            action_btn.bind(on_press=lambda x: self.btn_action(popup, button_num))
+            popup.open()
+        elif button_num==5:
+            content = BoxLayout(orientation='vertical', spacing=10, padding=10)
+            close_btn = Button(text='返回', size_hint_y=None, height=50, font_name=font_name)
+            action_btn = Button(text='无性生殖', size_hint_y=None, height=50, font_name=font_name)
+            content.add_widget(action_btn)
+            content.add_widget(close_btn)
+            popup = Popup(title=sector[button_num], content=content, size_hint=(0.7, 0.4))
+            popup.title_font = font_name
+            close_btn.bind(on_press=popup.dismiss)
+            action_btn.bind(on_press=lambda x: self.btn_action(popup, button_num))
+            popup.open()
     def btn_action(self, popup, button_num):
         popup.dismiss()
 
