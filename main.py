@@ -43,13 +43,16 @@ class MyApp(App):
         elif button_num==1:
             content = BoxLayout(orientation='vertical', spacing=10, padding=10)
             close_btn = Button(text='返回', size_hint_y=None, height=50, font_name=font_name)
-            action_btn = Button(text='藻类与植物的类群', size_hint_y=None, height=50, font_name=font_name)
-            content.add_widget(action_btn)
+            action_btn1 = Button(text='藻类与植物的类群', size_hint_y=None, height=50, font_name=font_name)
+            action_btn2 = Button(text='动物的类群', size_hint_y=None, height=50, font_name=font_name)
+            content.add_widget(action_btn1)
+            content.add_widget(action_btn2)
             content.add_widget(close_btn)
-            popup = Popup(title=sector[button_num], content=content, size_hint=(0.7, 0.4))
+            popup = Popup(title=sector[button_num], content=content, size_hint=(0.7, 0.5))
             popup.title_font = font_name
             close_btn.bind(on_press=popup.dismiss)
-            action_btn.bind(on_press=lambda x: self.btn_action(popup, button_num))
+            action_btn1.bind(on_press=lambda x: self.btn_action(popup, button_num))
+            action_btn2.bind(on_press=lambda x: self.btn_action(popup, button_num))
             popup.open()
         elif button_num==2:
             content = BoxLayout(orientation='vertical', spacing=10, padding=10)
@@ -61,6 +64,7 @@ class MyApp(App):
             popup.title_font = font_name
             close_btn.bind(on_press=popup.dismiss)
             action_btn.bind(on_press=lambda x: self.btn_action(popup, button_num))
+            #action_btn.bind(on_press=lambda x: self.btn_action(popup, button_num))
             popup.open()
         elif button_num==3:
             content = BoxLayout(orientation='vertical', spacing=10, padding=10)
